@@ -22,6 +22,26 @@ angular.module('ngCordova.plugins.appVersion', [])
         });
 
         return q.promise;
+      },
+
+      getAppName: function () {
+        var q = $q.defer();
+        cordova.getAppName.getAppName(function (code) {
+          q.resolve(code);
+        });
+
+        return q.promise;
+      },
+      
+      getPackageName: function () {
+        var q = $q.defer();
+        cordova.getPackageName.getPackageName(function (code) {
+          q.resolve(code);
+        });
+
+        return q.promise;
       }
+
+
     };
   }]);
